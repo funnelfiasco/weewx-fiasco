@@ -293,21 +293,40 @@
           <div class="header">
             $gettext("About this weather station"):
           </div>
-          <table>
-            <caption class="caption">$gettext("Location")</caption>
-            <tr>
-              <td class="label">$gettext("Latitude"):</td>
-              <td class="data">$station.latitude[0]&deg; $station.latitude[1]' $station.latitude[2]</td>
-            </tr>
-            <tr>
-              <td class="label">$gettext("Longitude"):</td>
-              <td class="data">$station.longitude[0]&deg; $station.longitude[1]' $station.longitude[2]</td>
-            </tr>
-            <tr>
-              <td class="label">$pgettext("Geographical", "Altitude"):</td>
-              <td class="data">$station.altitude</td>
-            </tr>
-          </table>
+          <div>
+            <table>
+              <caption class="caption">$gettext("Location")</caption>
+              <tr>
+                <td class="label">$gettext("Latitude"):</td>
+                <td class="data">$station.latitude[0]&deg; $station.latitude[1]' $station.latitude[2]</td>
+              </tr>
+              <tr>
+                <td class="label">$gettext("Longitude"):</td>
+                <td class="data">$station.longitude[0]&deg; $station.longitude[1]' $station.longitude[2]</td>
+              </tr>
+              <tr>
+                <td class="label">$pgettext("Geographical", "Altitude"):</td>
+                <td class="data">$station.altitude</td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table>
+              <caption class="caption">$gettext("Status")</caption>
+              #if $current.txBatteryStatus.has_data
+                <tr>
+                  <td class="label">$obs.label.txBatteryStatus</td>
+                  <td class="data">$current.txBatteryStatus.format(format_string='%0.f')</td>
+              </tr>
+              #end if
+              #if $current.consBatteryVoltage.has_data
+                <tr>
+                  <td class="label">$obs.label.consBatteryVoltage</td>
+                  <td class="data">$current.consBatteryVoltage</td>
+                </tr>
+              #end if
+            </table>
+          </div>
           <p>
             $gettext("This station uses a")
             $station.hardware,
