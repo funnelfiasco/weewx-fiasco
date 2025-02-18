@@ -316,7 +316,15 @@
               #if $current.txBatteryStatus.has_data
                 <tr>
                   <td class="label">$obs.label.txBatteryStatus</td>
-                  <td class="data">$current.txBatteryStatus.format(format_string='%0.f')</td>
+                  <td class="data">
+                  #if $current.txBatteryStatus.value_t[0] == 0
+                    Good
+                  #else if $current.txBatteryStatus.value_t[1] == 1
+                    Bad
+                  #else
+                    Unknown ($current.txBatteryStatus.value_t[1])
+                  #end if
+                  </td>
               </tr>
               #end if
               #if $current.consBatteryVoltage.has_data
