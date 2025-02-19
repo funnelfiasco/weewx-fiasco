@@ -41,10 +41,12 @@ $("%6.2f" % $R[0])#slurp
 #end def
                      CLIMATOLOGICAL SUMMARY for year $year_name
 
-
+#if $to_bool($Extras.privacyMode)
+NAME: $station.location    ELEV: $station.altitude
+#else
 NAME: $station.location                  
 ELEV: $station.altitude    LAT: $station.latitude[0]-$station.latitude[1] $station.latitude[2]    LONG: $station.longitude[0]-$station.longitude[1] $station.longitude[2]
-
+#end if
 
                                        TEMPERATURE ($unit.label.outTemp.strip())
 

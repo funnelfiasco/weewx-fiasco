@@ -25,8 +25,10 @@
            $obs.label.inTemp: $current.inTemp
          </description>
          <pubDate>$current.dateTime.format("%a, %d %b %Y %H:%M:%S %Z")</pubDate>
+         #if not $to_bool($Extras.privacyMode)  
 	     <geo:lat>$station.latitude_f</geo:lat>
     	 <geo:long>$station.longitude_f</geo:long>
+         #end if
  		 <content:encoded><![CDATA[
            <p>
              $obs.label.dateTime: $current.dateTime<br/>

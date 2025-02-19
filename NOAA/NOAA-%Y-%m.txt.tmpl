@@ -17,9 +17,11 @@
                    MONTHLY CLIMATOLOGICAL SUMMARY for $month_name $year_name
 
 
-NAME: $station.location                  
+#if $to_bool($Extras.privacyMode)
+NAME: $station.location    ELEV: $station.altitude
+#else
 ELEV: $station.altitude    LAT: $station.latitude[0]-$station.latitude[1] $station.latitude[2]    LONG: $station.longitude[0]-$station.longitude[1] $station.longitude[2]
-
+#end if
 
                    TEMPERATURE ($unit.label.outTemp.strip()), RAIN ($unit.label.rain.strip()), WIND SPEED ($unit.label.windSpeed.strip())
 

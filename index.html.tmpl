@@ -348,6 +348,14 @@
           <div>
             <table>
               <caption class="caption">$gettext("Location")</caption>
+              #if $to_bool($Extras.privacyMode)
+              <tr>
+                #if $Extras.privacyLocation != ""
+                <td class="label" style="text-align: center" colspan=2>$Extras.privacyLocation</td>
+                #else
+                <td class="label" style="text-align: center" colspan=2>$station.location</td>
+                #end if
+              #else
               <tr>
                 <td class="label">$gettext("Latitude"):</td>
                 <td class="data">$station.latitude[0]&deg; $station.latitude[1]' $station.latitude[2]</td>
@@ -356,6 +364,7 @@
                 <td class="label">$gettext("Longitude"):</td>
                 <td class="data">$station.longitude[0]&deg; $station.longitude[1]' $station.longitude[2]</td>
               </tr>
+              #end if
               <tr>
                 <td class="label">$pgettext("Geographical", "Altitude"):</td>
                 <td class="data">$station.altitude</td>
