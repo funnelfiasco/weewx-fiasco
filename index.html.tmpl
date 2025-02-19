@@ -319,6 +319,28 @@
                 </td>
               </tr>
               #end if
+              <tr>
+                <td class="stats_label">
+                  $gettext("High") $obs.label.rxCheckPercent<br/>
+                  $gettext("Average") $obs.label.rxCheckPercent<br/>
+                  $gettext("Low") $obs.label.rxCheckPercent
+                </td>
+                <td class="stats_data">
+                  $day.rxCheckPercent.max<br/>
+                  $day.rxCheckPercent.avg<br/>
+                  $day.rxCheckPercent.min<br/>
+                </td>
+              </tr>
+              #if $current.consBatteryVoltage.has_data
+              <tr>
+                <td class="stats_label">
+                  $gettext("Average") $obs.label.consBatteryVoltage
+                </td>
+                <td class="stats_data">
+                  $day.consBatteryVoltage.avg
+                </td>
+              </tr>
+              #end if
             </tbody>
           </table>
         </div> <!--End class "stats" -->

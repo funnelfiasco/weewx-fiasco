@@ -235,6 +235,28 @@
                 </td>
               </tr>
               #end if
+              <tr>
+                <td class="stats_label">
+                  $gettext("High") $obs.label.rxCheckPercent<br/>
+                  $gettext("Average") $obs.label.rxCheckPercent<br/>
+                  $gettext("Low") $obs.label.rxCheckPercent
+                </td>
+                <td class="stats_data">
+                  $week.rxCheckPercent.max<br/>
+                  $week.rxCheckPercent.avg<br/>
+                  $week.rxCheckPercent.min<br/>
+                </td>
+              </tr>
+              #if $current.consBatteryVoltage.has_data
+              <tr>
+                <td class="stats_label">
+                  $gettext("Average") $obs.label.consBatteryVoltage
+                </td>
+                <td class="stats_data">
+                  $week.consBatteryVoltage.avg
+                </td>
+              </tr>
+              #end if
             </tbody>
           </table>
         </div> <!-- End class "stats" -->
@@ -431,6 +453,28 @@
                 <td class="stats_data">
                   $month.radiation.max $gettext("at") $month.radiation.maxtime<br/>
                   $month.radiation.min $gettext("at") $month.radiation.mintime
+                </td>
+              </tr>
+              #end if
+              <tr>
+                <td class="stats_label">
+                  $gettext("High") $obs.label.rxCheckPercent<br/>
+                  $gettext("Average") $obs.label.rxCheckPercent<br/>
+                  $gettext("Low") $obs.label.rxCheckPercent
+                </td>
+                <td class="stats_data">
+                  $month.rxCheckPercent.max<br/>
+                  $month.rxCheckPercent.avg<br/>
+                  $month.rxCheckPercent.min<br/>
+                </td>
+              </tr>
+              #if $current.consBatteryVoltage.has_data
+              <tr>
+                <td class="stats_label">
+                  $gettext("Average") $obs.label.consBatteryVoltage
+                </td>
+                <td class="stats_data">
+                  $month.consBatteryVoltage.avg
                 </td>
               </tr>
               #end if
