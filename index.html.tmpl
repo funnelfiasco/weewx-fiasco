@@ -59,19 +59,35 @@
             <tbody>
               <tr>
                 <td class="stats_label">$obs.label.outTemp</td>
-                <td class="stats_data">$current.outTemp</td>
+                <td class="stats_data">$current.outTemp
+                  #if $Extras.metricizeUS and $unit.unit_type.outTemp == "degree_F"
+                  ($current.outTemp.degree_C)
+                  #end if
+                </td>
               </tr>
               <tr>
                 <td class="stats_label">$obs.label.windchill</td>
-                <td class="stats_data">$current.windchill</td>
+                <td class="stats_data">$current.windchill
+                  #if $Extras.metricizeUS and $unit.unit_type.outTemp == "degree_F"
+                  ($current.windchill.degree_C)
+                  #end if
+                </td>
               </tr>
               <tr>
                 <td class="stats_label">$obs.label.heatindex</td>
-                <td class="stats_data">$current.heatindex</td>
+                <td class="stats_data">$current.heatindex
+                  #if $Extras.metricizeUS and $unit.unit_type.outTemp == "degree_F"
+                  ($current.heatindex.degree_C)
+                  #end if
+                </td>
               </tr>
               <tr>
                 <td class="stats_label">$obs.label.dewpoint</td>
-                <td class="stats_data">$current.dewpoint</td>
+                <td class="stats_data">$current.dewpoint
+                  #if $Extras.metricizeUS and $unit.unit_type.outTemp == "degree_F"
+                  ($current.dewpoint.degree_C)
+                  #end if
+                </td>
               </tr>
               <tr>
                 <td class="stats_label">$obs.label.outHumidity</td>
@@ -95,7 +111,11 @@
               </tr>
               <tr>
                 <td class="stats_label">$obs.label.inTemp</td>
-                <td class="stats_data">$current.inTemp</td>
+                <td class="stats_data">$current.inTemp
+                  #if $Extras.metricizeUS and $unit.unit_type.outTemp == "degree_F"
+                  ($current.inTemp.degree_C)
+                  #end if
+                </td>
               </tr>
               #if $day.UV.has_data
               <tr>
@@ -133,8 +153,16 @@
                   $gettext("Low Temperature")
                 </td>
                 <td class="stats_data">
-                  $day.outTemp.max $gettext("at") $day.outTemp.maxtime<br/>
-                  $day.outTemp.min $gettext("at") $day.outTemp.mintime
+                  $day.outTemp.max
+                  #if $Extras.metricizeUS and $unit.unit_type.outTemp == "degree_F"
+                  ($day.outTemp.max.degree_C)
+                  #end if
+                  $gettext("at") $day.outTemp.maxtime<br/>
+                  $day.outTemp.min
+                  #if $Extras.metricizeUS and $unit.unit_type.outTemp == "degree_F"
+                  ($day.outTemp.min.degree_C)
+                  #end if
+                  $gettext("at") $day.outTemp.mintime<br/>
                 </td>
               </tr>
               <tr>
@@ -143,8 +171,16 @@
                   $gettext("Low Wind Chill")
                 </td>
                 <td class="stats_data">
-                  $day.heatindex.max $gettext("at") $day.heatindex.maxtime<br/>
-                  $day.windchill.min $gettext("at") $day.windchill.mintime
+                  $day.heatindex.max
+                  #if $Extras.metricizeUS and $unit.unit_type.heatindex == "degree_F"
+                  ($day.heatindex.max.degree_C)
+                  #end if
+                  $gettext("at") $day.heatindex.maxtime<br/>
+                  $day.windchill.min
+                  #if $Extras.metricizeUS and $unit.unit_type.windchill == "degree_F"
+                  ($day.windchill.min.degree_C)
+                  #end if
+                  $gettext("at") $day.windchill.mintime
                 </td>
               </tr>
               <tr>
@@ -163,8 +199,16 @@
                   $gettext("Low Dewpoint")
                 </td>
                 <td class="stats_data">
-                  $day.dewpoint.max $gettext("at") $day.dewpoint.maxtime<br/>
-                  $day.dewpoint.min $gettext("at") $day.dewpoint.mintime
+                  $day.dewpoint.max
+                  #if $Extras.metricizeUS and $unit.unit_type.dewpoint == "degree_F"
+                  ($day.dewpoint.max.degree_C)
+                  #end if
+                  $gettext("at") $day.dewpoint.maxtime<br/>
+                  $day.dewpoint.min
+                  #if $Extras.metricizeUS and $unit.unit_type.dewpoint == "degree_F"
+                  ($day.dewpoint.min.degree_C)
+                  #end if
+                  $gettext("at") $day.dewpoint.mintime
                 </td>
               </tr>
               <tr>
@@ -227,7 +271,15 @@
                   $gettext("Low Inside Temperature")
                 </td>
                 <td class="stats_data">
-                  $day.inTemp.max $gettext("at") $day.inTemp.maxtime<br/>
+                  $day.inTemp.max
+                  #if $Extras.metricizeUS and $unit.unit_type.inTemp == "degree_F"
+                  ($day.inTemp.max.degree_C)
+                  #end if
+                  $gettext("at") $day.inTemp.maxtime<br/>
+                  $day.inTemp.min
+                  #if $Extras.metricizeUS and $unit.unit_type.inTemp == "degree_F"
+                  ($day.inTemp.min.degree_C)
+                  #end if
                   $day.inTemp.min $gettext("at") $day.inTemp.mintime
                 </td>
               </tr>
@@ -349,7 +401,7 @@
           <p><a href="RSS/weewx_rss.xml">$gettext("RSS feed")</a></p>
           <p>$gettext("WeeWX uptime"):  $station.uptime.long_form<br/>
              $gettext("Server uptime"): $station.os_uptime.long_form<br/>
-             weewx v$station.version</p>
+             weewx v$station.version (skin version $SKIN_VERSION) </p>
         </div> <!-- End id "about" -->
         
         <div id="almanac">

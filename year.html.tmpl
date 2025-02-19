@@ -55,8 +55,16 @@
                   $gettext("Low Temperature")
                 </td>
                 <td class="stats_data">
-                  $year.outTemp.max $gettext("at") $year.outTemp.maxtime<br/>
-                  $year.outTemp.min $gettext("at") $year.outTemp.mintime
+                  $year.outTemp.max
+                  #if $Extras.metricizeUS and $unit.unit_type.outTemp == "degree_F"
+                  ($year.outTemp.max.degree_C)
+                  #end if
+                  $gettext("at") $year.outTemp.maxtime<br/>
+                  $year.outTemp.min
+                  #if $Extras.metricizeUS and $unit.unit_type.outTemp == "degree_F"
+                  ($year.outTemp.min.degree_C)
+                  #end if
+                  $gettext("at") $year.outTemp.mintime
                 </td>
               </tr>
               <tr>
@@ -64,7 +72,11 @@
                   $gettext("High Heat Index")
                 </td>
                 <td class="stats_data"> 
-                  $year.heatindex.max $gettext("at") $year.heatindex.maxtime
+                  $year.heatindex.max
+                  #if $Extras.metricizeUS and $unit.unit_type.heatindex == "degree_F"
+                  ($year.heatindex.max.degree_C)
+                  #end if
+                  $gettext("at") $year.heatindex.maxtime
                 </td>
               </tr>
               <tr>
@@ -72,7 +84,11 @@
                   $gettext("Low Wind Chill")
                 </td>
                 <td class="stats_data"> 
-                  $year.windchill.min $gettext("at") $year.windchill.mintime
+                  $year.windchill.min
+                  #if $Extras.metricizeUS and $unit.unit_type.windchill == "degree_F"
+                  ($year.windchill.min.degree_C)
+                  #end if
+                  $gettext("at") $year.windchill.mintime
                 </td>
               </tr>
               <tr>
@@ -91,8 +107,16 @@
                   $gettext("Low Dewpoint")
                 </td>
                 <td class="stats_data">
-                  $year.dewpoint.max $year.dewpoint.maxtime<br/>
-                  $year.dewpoint.min $year.dewpoint.mintime
+                  $year.dewpoint.max
+                  #if $Extras.metricizeUS and $unit.unit_type.dewpoint == "degree_F"
+                  ($year.dewpoint.max.degree_C)
+                  #end if
+                  $gettext("at") $year.dewpoint.maxtime<br/>
+                  $year.dewpoint.min
+                  #if $Extras.metricizeUS and $unit.unit_type.dewpoint == "degree_F"
+                  ($year.dewpoint.min.degree_C)
+                  #end if
+                  $gettext("at") $year.dewpoint.mintime
                 </td>
               </tr>
               <tr>
@@ -163,8 +187,16 @@
                   $gettext("Low Inside Temperature")
                 </td>
                 <td class="stats_data">
-                  $year.inTemp.max $gettext("at") $year.inTemp.maxtime<br/>
-                  $year.inTemp.min $gettext("at") $year.inTemp.mintime
+                  $year.inTemp.max
+                  #if $Extras.metricizeUS and $unit.unit_type.inTemp == "degree_F"
+                  ($year.inTemp.max.degree_C)
+                  #end if
+                  $gettext("at") $year.inTemp.maxtime<br/>
+                  $year.inTemp.min
+                  #if $Extras.metricizeUS and $unit.unit_type.inTemp == "degree_F"
+                  ($year.inTemp.min.degree_C)
+                  #end if
+                  $gettext("at") $year.inTemp.mintime
                 </td>
               </tr>
               #if $year.UV.has_data
