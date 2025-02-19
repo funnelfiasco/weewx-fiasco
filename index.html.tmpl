@@ -60,7 +60,7 @@
               <tr>
                 <td class="stats_label">$obs.label.outTemp</td>
                 <td class="stats_data">$current.outTemp
-                  #if $Extras.metricizeUS and $unit.unit_type.outTemp == "degree_F"
+                  #if $to_bool($Extras.metricizeUS) and $unit.unit_type.outTemp == "degree_F"
                   ($current.outTemp.degree_C)
                   #end if
                 </td>
@@ -68,7 +68,7 @@
               <tr>
                 <td class="stats_label">$obs.label.windchill</td>
                 <td class="stats_data">$current.windchill
-                  #if $Extras.metricizeUS and $unit.unit_type.outTemp == "degree_F"
+                  #if $to_bool($Extras.metricizeUS) and $unit.unit_type.outTemp == "degree_F"
                   ($current.windchill.degree_C)
                   #end if
                 </td>
@@ -76,7 +76,7 @@
               <tr>
                 <td class="stats_label">$obs.label.heatindex</td>
                 <td class="stats_data">$current.heatindex
-                  #if $Extras.metricizeUS and $unit.unit_type.outTemp == "degree_F"
+                  #if $to_bool($Extras.metricizeUS) and $unit.unit_type.outTemp == "degree_F"
                   ($current.heatindex.degree_C)
                   #end if
                 </td>
@@ -84,7 +84,7 @@
               <tr>
                 <td class="stats_label">$obs.label.dewpoint</td>
                 <td class="stats_data">$current.dewpoint
-                  #if $Extras.metricizeUS and $unit.unit_type.outTemp == "degree_F"
+                  #if $to_bool($Extras.metricizeUS) and $unit.unit_type.outTemp == "degree_F"
                   ($current.dewpoint.degree_C)
                   #end if
                 </td>
@@ -112,7 +112,7 @@
               <tr>
                 <td class="stats_label">$obs.label.inTemp</td>
                 <td class="stats_data">$current.inTemp
-                  #if $Extras.metricizeUS and $unit.unit_type.outTemp == "degree_F"
+                  #if $to_bool($Extras.metricizeUS) and $unit.unit_type.outTemp == "degree_F"
                   ($current.inTemp.degree_C)
                   #end if
                 </td>
@@ -154,12 +154,12 @@
                 </td>
                 <td class="stats_data">
                   $day.outTemp.max
-                  #if $Extras.metricizeUS and $unit.unit_type.outTemp == "degree_F"
+                  #if $to_bool($Extras.metricizeUS) and $unit.unit_type.outTemp == "degree_F"
                   ($day.outTemp.max.degree_C)
                   #end if
                   $gettext("at") $day.outTemp.maxtime<br/>
                   $day.outTemp.min
-                  #if $Extras.metricizeUS and $unit.unit_type.outTemp == "degree_F"
+                  #if $to_bool($Extras.metricizeUS) and $unit.unit_type.outTemp == "degree_F"
                   ($day.outTemp.min.degree_C)
                   #end if
                   $gettext("at") $day.outTemp.mintime<br/>
@@ -172,12 +172,12 @@
                 </td>
                 <td class="stats_data">
                   $day.heatindex.max
-                  #if $Extras.metricizeUS and $unit.unit_type.heatindex == "degree_F"
+                  #if $to_bool($Extras.metricizeUS) and $unit.unit_type.heatindex == "degree_F"
                   ($day.heatindex.max.degree_C)
                   #end if
                   $gettext("at") $day.heatindex.maxtime<br/>
                   $day.windchill.min
-                  #if $Extras.metricizeUS and $unit.unit_type.windchill == "degree_F"
+                  #if $to_bool($Extras.metricizeUS) and $unit.unit_type.windchill == "degree_F"
                   ($day.windchill.min.degree_C)
                   #end if
                   $gettext("at") $day.windchill.mintime
@@ -200,12 +200,12 @@
                 </td>
                 <td class="stats_data">
                   $day.dewpoint.max
-                  #if $Extras.metricizeUS and $unit.unit_type.dewpoint == "degree_F"
+                  #if $to_bool($Extras.metricizeUS) and $unit.unit_type.dewpoint == "degree_F"
                   ($day.dewpoint.max.degree_C)
                   #end if
                   $gettext("at") $day.dewpoint.maxtime<br/>
                   $day.dewpoint.min
-                  #if $Extras.metricizeUS and $unit.unit_type.dewpoint == "degree_F"
+                  #if $to_bool($Extras.metricizeUS) and $unit.unit_type.dewpoint == "degree_F"
                   ($day.dewpoint.min.degree_C)
                   #end if
                   $gettext("at") $day.dewpoint.mintime
@@ -272,12 +272,12 @@
                 </td>
                 <td class="stats_data">
                   $day.inTemp.max
-                  #if $Extras.metricizeUS and $unit.unit_type.inTemp == "degree_F"
+                  #if $to_bool($Extras.metricizeUS) and $unit.unit_type.inTemp == "degree_F"
                   ($day.inTemp.max.degree_C)
                   #end if
                   $gettext("at") $day.inTemp.maxtime<br/>
                   $day.inTemp.min
-                  #if $Extras.metricizeUS and $unit.unit_type.inTemp == "degree_F"
+                  #if $to_bool($Extras.metricizeUS) and $unit.unit_type.inTemp == "degree_F"
                   ($day.inTemp.min.degree_C)
                   #end if
                   $day.inTemp.min $gettext("at") $day.inTemp.mintime

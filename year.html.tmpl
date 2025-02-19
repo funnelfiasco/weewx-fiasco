@@ -56,12 +56,12 @@
                 </td>
                 <td class="stats_data">
                   $year.outTemp.max
-                  #if $Extras.metricizeUS and $unit.unit_type.outTemp == "degree_F"
+                  #if $to_bool($Extras.metricizeUS) and $unit.unit_type.outTemp == "degree_F"
                   ($year.outTemp.max.degree_C)
                   #end if
                   $gettext("at") $year.outTemp.maxtime<br/>
                   $year.outTemp.min
-                  #if $Extras.metricizeUS and $unit.unit_type.outTemp == "degree_F"
+                  #if $to_bool($Extras.metricizeUS) and $unit.unit_type.outTemp == "degree_F"
                   ($year.outTemp.min.degree_C)
                   #end if
                   $gettext("at") $year.outTemp.mintime
@@ -73,7 +73,7 @@
                 </td>
                 <td class="stats_data"> 
                   $year.heatindex.max
-                  #if $Extras.metricizeUS and $unit.unit_type.heatindex == "degree_F"
+                  #if $to_bool($Extras.metricizeUS) and $unit.unit_type.heatindex == "degree_F"
                   ($year.heatindex.max.degree_C)
                   #end if
                   $gettext("at") $year.heatindex.maxtime
@@ -85,7 +85,7 @@
                 </td>
                 <td class="stats_data"> 
                   $year.windchill.min
-                  #if $Extras.metricizeUS and $unit.unit_type.windchill == "degree_F"
+                  #if $to_bool($Extras.metricizeUS) and $unit.unit_type.windchill == "degree_F"
                   ($year.windchill.min.degree_C)
                   #end if
                   $gettext("at") $year.windchill.mintime
@@ -108,12 +108,12 @@
                 </td>
                 <td class="stats_data">
                   $year.dewpoint.max
-                  #if $Extras.metricizeUS and $unit.unit_type.dewpoint == "degree_F"
+                  #if $to_bool($Extras.metricizeUS) and $unit.unit_type.dewpoint == "degree_F"
                   ($year.dewpoint.max.degree_C)
                   #end if
                   $gettext("at") $year.dewpoint.maxtime<br/>
                   $year.dewpoint.min
-                  #if $Extras.metricizeUS and $unit.unit_type.dewpoint == "degree_F"
+                  #if $to_bool($Extras.metricizeUS) and $unit.unit_type.dewpoint == "degree_F"
                   ($year.dewpoint.min.degree_C)
                   #end if
                   $gettext("at") $year.dewpoint.mintime
@@ -188,12 +188,12 @@
                 </td>
                 <td class="stats_data">
                   $year.inTemp.max
-                  #if $Extras.metricizeUS and $unit.unit_type.inTemp == "degree_F"
+                  #if $to_bool($Extras.metricizeUS) and $unit.unit_type.inTemp == "degree_F"
                   ($year.inTemp.max.degree_C)
                   #end if
                   $gettext("at") $year.inTemp.maxtime<br/>
                   $year.inTemp.min
-                  #if $Extras.metricizeUS and $unit.unit_type.inTemp == "degree_F"
+                  #if $to_bool($Extras.metricizeUS) and $unit.unit_type.inTemp == "degree_F"
                   ($year.inTemp.min.degree_C)
                   #end if
                   $gettext("at") $year.inTemp.mintime
