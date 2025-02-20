@@ -199,6 +199,16 @@
                   $gettext("at") $week.inTemp.mintime
                 </td>
               </tr>
+              <tr>
+                <td class="stats_label">
+                  $gettext("High Inside Humidity")<br/>
+                  $gettext("Low Inside Humidity")<br/>
+                </td>
+                <td class="stats_data">
+                  $week.inHumidity.max $gettext("at") $week.inHumidity.maxtime<br/>
+                  $week.inHumidity.min $gettext("at") $week.inHumidity.mintime
+                </td>
+              </tr>
               #if $week.UV.has_data
               <tr>
                 <td class="stats_label">
@@ -418,6 +428,15 @@
                   ($month.inTemp.min.degree_C)
                   #end if
                   $gettext("at") $month.inTemp.mintime
+                </td>
+              <tr>
+                <td class="stats_label">
+                  $gettext("High Inside Humidity")<br/>
+                  $gettext("Low Inside Humidity")<br/>
+                </td>
+                <td class="stats_data">
+                  $month.inHumidity.max $gettext("at") $month.inHumidity.maxtime<br/>
+                  $month.inHumidity.min $gettext("at") $month.inHumidity.mintime
                 </td>
               </tr>
               #if $month.UV.has_data

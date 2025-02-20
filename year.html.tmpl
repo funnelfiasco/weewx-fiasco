@@ -199,6 +199,16 @@
                   $gettext("at") $year.inTemp.mintime
                 </td>
               </tr>
+              <tr>
+                <td class="stats_label">
+                  $gettext("High Inside Humidity")<br/>
+                  $gettext("Low Inside Humidity")<br/>
+                </td>
+                <td class="stats_data">
+                  $year.inHumidity.max $gettext("at") $year.inHumidity.maxtime<br/>
+                  $year.inHumidity.min $gettext("at") $year.inHumidity.mintime
+                </td>
+              </tr>
               #if $year.UV.has_data
               <tr>
                 <td class="stats_label">
