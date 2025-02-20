@@ -117,6 +117,12 @@
                   #end if
                 </td>
               </tr>
+              #if $day.inHumidity.has_data
+              <tr>
+                <td class="stats_label">$obs.label.inHumidity</td>
+                <td class="stats_data">$current.inHumidity</td>
+              </tr>
+              #end if
               #if $day.UV.has_data
               <tr>
                 <td class="stats_label">$obs.label.UV</td>
@@ -283,6 +289,18 @@
                   $day.inTemp.min $gettext("at") $day.inTemp.mintime
                 </td>
               </tr>
+              #if $day.inHumidity.has_data
+              <tr>
+                <td class="stats_label">
+                  $gettext("High Inside Humidity")<br/>
+                  $gettext("Low Inside Humidity")<br/>
+                </td>
+                <td class="stats_data">
+                  $day.inHumidity.max $gettext("at") $day.inHumidity.maxtime<br/>
+                  $day.inHumidity.min $gettext("at") $day.inHumidity.mintime
+                </td>
+              </tr>
+              #end if
               #if $day.UV.has_data
               <tr>
                 <td class="stats_label">
@@ -594,8 +612,11 @@
           <img src="daywind.png"      alt="wind" />
           <img src="daybarometer.png" alt="barometer"/>
           <img src="daywinddir.png"   alt="Hi Wind" />
-          <img src="dayinside.png"    alt="Inside" />
           <img src="daywindvec.png"   alt="Wind Vector" />
+          <img src="dayinside.png"    alt="Inside temperature" />
+          #if $day.inHumidity.has_data
+          <img src="dayinhumidity.png" alt="Inside humidity" />
+          #end if
           #if $day.radiation.has_data
           <img src="dayradiation.png" alt="Radiation" />
           #end if

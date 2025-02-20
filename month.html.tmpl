@@ -199,6 +199,18 @@
                   $gettext("at") $month.inTemp.mintime
                 </td>
               </tr>
+              #if $month.inHumidity.has_data
+              <tr>
+                <td class="stats_label">
+                  $gettext("High Inside Humidity")<br/>
+                  $gettext("Low Inside Humidity")<br/>
+                </td>
+                <td class="stats_data">
+                  $month.inHumidity.max $gettext("at") $month.inHumidity.maxtime<br/>
+                  $month.inHumidity.min $gettext("at") $month.inHumidity.mintime
+                </td>
+              </tr>
+              #end if
               #if $month.UV.has_data
               <tr>
                 <td class="stats_label">
@@ -420,6 +432,18 @@
                   $gettext("at") $year.inTemp.mintime
                 </td>
               </tr>
+              #if $month.inHumidity.has_data
+              <tr>
+                <td class="stats_label">
+                  $gettext("High Inside Humidity")<br/>
+                  $gettext("Low Inside Humidity")<br/>
+                </td>
+                <td class="stats_data">
+                  $year.inHumidity.max $gettext("at") $year.inHumidity.maxtime<br/>
+                  $year.inHumidity.min $gettext("at") $year.inHumidity.mintime
+                </td>
+              </tr>
+              #end if
               #if $year.UV.has_data
               <tr>
                 <td class="stats_label">
@@ -497,8 +521,11 @@
           <img src="monthwind.png" alt="wind" />
           <img src="monthbarometer.png" alt="barometer"/>
           <img src="monthwinddir.png" alt="Hi Wind" />
-          <img src="monthinside.png" alt="Inside" />
           <img src="monthwindvec.png" alt="Wind Vector" />
+          <img src="monthinside.png"    alt="Inside temperature" />
+          #if $month.inHumidity.has_data
+          <img src="monthinhumidity.png" alt="Inside humidity" />
+          #end if
           #if $month.radiation.has_data
           <img src="monthradiation.png" alt="Radiation" />
           #end if
