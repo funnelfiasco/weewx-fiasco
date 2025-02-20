@@ -402,10 +402,10 @@
                   <td class="data">
                   #if $current.txBatteryStatus.value_t[0] == 0
                     Good
-                  #else if $current.txBatteryStatus.value_t[1] == 1
+                  #else if $current.txBatteryStatus.value_t[0] == 1
                     Bad
                   #else
-                    Unknown ($current.txBatteryStatus.value_t[1])
+                    Unknown ($current.txBatteryStatus.value_t[0])
                   #end if
                   </td>
               </tr>
