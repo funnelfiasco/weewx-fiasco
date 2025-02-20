@@ -199,6 +199,7 @@
                   $gettext("at") $week.inTemp.mintime
                 </td>
               </tr>
+              #if $week.inHumidity.has_data
               <tr>
                 <td class="stats_label">
                   $gettext("High Inside Humidity")<br/>
@@ -209,6 +210,7 @@
                   $week.inHumidity.min $gettext("at") $week.inHumidity.mintime
                 </td>
               </tr>
+              #end if
               #if $week.UV.has_data
               <tr>
                 <td class="stats_label">
@@ -429,6 +431,7 @@
                   #end if
                   $gettext("at") $month.inTemp.mintime
                 </td>
+              #if $week.inHumidity.has_data
               <tr>
                 <td class="stats_label">
                   $gettext("High Inside Humidity")<br/>
@@ -439,6 +442,7 @@
                   $month.inHumidity.min $gettext("at") $month.inHumidity.mintime
                 </td>
               </tr>
+              #end if
               #if $month.UV.has_data
               <tr>
                 <td class="stats_label">
@@ -518,7 +522,9 @@
           <img src="weekwinddir.png" alt="Hi Wind" />
           <img src="weekwindvec.png" alt="Wind Vector" />
           <img src="weekinside.png"    alt="Inside temperature" />
+          #if $week.inHumidity.has_data
           <img src="weekinhumidity.png" alt="Inside humidity" />
+          #end if
           #if $week.radiation.has_data
           <img src="weekradiation.png" alt="Radiation" />
           #end if

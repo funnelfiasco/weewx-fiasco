@@ -199,6 +199,7 @@
                   $gettext("at") $year.inTemp.mintime
                 </td>
               </tr>
+              #if $year.inHumidity.has_data
               <tr>
                 <td class="stats_label">
                   $gettext("High Inside Humidity")<br/>
@@ -209,6 +210,7 @@
                   $year.inHumidity.min $gettext("at") $year.inHumidity.mintime
                 </td>
               </tr>
+              #end if
               #if $year.UV.has_data
               <tr>
                 <td class="stats_label">
@@ -318,7 +320,9 @@
           <img src="yearwinddir.png" alt="Hi Wind" />
           <img src="yearwindvec.png" alt="Wind Vector" />
           <img src="yearinside.png"    alt="Inside temperature" />
+          #if $year.inHumidity.has_data
           <img src="yearinhumidity.png" alt="Inside humidity" />
+          #end if
           #if $year.radiation.has_data
           <img src="yearradiation.png" alt="Radiation" />
           #end if
