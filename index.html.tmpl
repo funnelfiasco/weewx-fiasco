@@ -438,19 +438,29 @@
                   <td class="label">$obs.label.rxCheckPercent</td>
                   <td class="data">$current.rxCheckPercent</td>
                 </tr>
+                <tr>
+                  <td class="label">$gettext("Hardware")</td>
+                  <td class="data">$station.hardware</td>
+                </tr>
+                <tr>
+                  <td class="label">$gettext("WeeWX uptime")</td>
+                  <td class="data">$station.uptime.long_form</td>
+                </tr>
+                <tr>
+                  <td class="label">$gettext("Server uptime")</td>
+                  <td class="data">$station.os_uptime.long_form</td>
+                </tr>
+                <tr>
+                  <td class="label">$gettext("WeeWX version")</td>
+                  <td class="data"><a href="https://github.com/weewx/weewx/releases/tag/v$station.version">$station.version</a></td>
+                </tr>
+                <tr>
+                  <td class="label">$gettext("Skin version")</td>
+                  <td class="data"><a href="https://github.com/funnelfiasco/weewx-fiasco/releases/$SKIN_VERSION">$SKIN_VERSION</a></td>
+                </tr>
             </table>
           </div>
-          <p>
-            $gettext("This station uses a")
-            $station.hardware,
-            $gettext("controlled by <a href='https://www.weewx.com'>'WeeWX'</a>,")
-            $gettext("an experimental weather software system written in Python.")
-            $gettext("Weewx was designed to be simple, fast, and easy to understand by leveraging modern software concepts.")
-          </p>
           <p><a href="RSS/weewx_rss.xml">$gettext("RSS feed")</a></p>
-          <p>$gettext("WeeWX uptime"):  $station.uptime.long_form<br/>
-             $gettext("Server uptime"): $station.os_uptime.long_form<br/>
-             weewx v$station.version (skin version $SKIN_VERSION) </p>
         </div> <!-- End id "about" -->
         
         <div id="almanac">
