@@ -515,6 +515,14 @@
                   <td class="label">$gettext("Declination"):</td>
                   <td class="data">$("%.1f&deg;" % $almanac.sun.dec)</td>
                 </tr>
+                <tr>
+                  <td class="label">$gettext("Tomorrow's sunrise"):</td>
+                  <td class="data">$almanac(almanac_time=$current.dateTime.value_t[0]+86400).sun.rise.string($sun_None)</td>
+                </tr>
+                <tr>
+                  <td class="label">$gettext("Tomorrow's sunset"):</td>
+                  <td class="data">$almanac(almanac_time=$current.dateTime.value_t[0]+86400).sun.set.string($sun_None)</td>
+                </tr>
                 #if $almanac.next_equinox.raw < $almanac.next_solstice.raw
                 ## The equinox is before the solstice. Display them in order.
                 <tr>
