@@ -98,10 +98,6 @@
                 <td class="stats_data">$current.barometer</td>
               </tr>
               <tr>
-                <td class="stats_label">$obs.label.barometerRate ($trend.time_delta.hour.format("%.0f"))</td>
-                <td class="stats_data">$trend.barometer</td>
-              </tr>
-              <tr>
                 <td class="stats_label">$obs.label.wind</td>
                 <td class="stats_data">$current.windSpeed $gettext("from") $current.windDir ($current.windDir.ordinal_compass)</td>
               </tr>
@@ -139,6 +135,58 @@
               <tr>
                 <td class="stats_label">$obs.label.radiation</td>
                 <td class="stats_data">$current.radiation</td>
+              </tr>
+              #end if
+            </tbody>
+          </table>
+        </div>
+
+        <p>&nbsp;</p>
+
+        <div class="stats">
+          <div class="stats_header">
+            $gettext("Trends")
+          </div>
+          <table>
+           <tbody>
+              <tr>
+                <td class="stats_label">$obs.label.outTemp $gettext("Change") ($trend(time_delta="1h").time_delta.hour.format("%.0f"))</td>
+                <td class="stats_data">$trend(time_delta="1h").outTemp</td>
+              </tr>
+              <tr>
+                <td class="stats_label">$obs.label.outTemp $gettext("Change") ($trend(time_delta="24h").time_delta.hour.format("%.0f"))</td>
+                <td class="stats_data">$trend(time_delta="24h").outTemp</td>
+              </tr>
+              <tr>
+                <td class="stats_label">$obs.label.dewpoint $gettext("Change") ($trend(time_delta="1h").time_delta.hour.format("%.0f"))</td>
+                <td class="stats_data">$trend(time_delta="1h").dewpoint</td>
+              </tr>
+              <tr>
+                <td class="stats_label">$obs.label.dewpoint $gettext("Change") ($trend(time_delta="24h").time_delta.hour.format("%.0f"))</td>
+                <td class="stats_data">$trend(time_delta="24h").dewpoint</td>
+              </tr>
+              <tr>
+                <td class="stats_label">$obs.label.barometerRate ($trend(time_delta="1h").time_delta.hour.format("%.0f"))</td>
+                <td class="stats_data">$trend(time_delta="1h").barometer</td>
+              </tr>
+              <tr>
+                <td class="stats_label">$obs.label.barometerRate ($trend(time_delta="3h").time_delta.hour.format("%.0f"))</td>
+                <td class="stats_data">$trend(time_delta="3h").barometer</td>
+              </tr>
+              <tr>
+                <td class="stats_label">$obs.label.barometerRate ($trend(time_delta="24h").time_delta.hour.format("%.0f"))</td>
+                <td class="stats_data">$trend(time_delta="24h").barometer</td>
+              </tr>
+              #if $day.UV.has_data
+              <tr>
+                <td class="stats_label">$obs.label.UVRate ($trend(time_delta="24h").time_delta.hour.format("%.0f"))</td>
+                <td class="stats_data">$trend(time_delta="24h").UV</td>
+              </tr>
+              #end if
+              #if $day.radiation.has_data
+              <tr>
+                <td class="stats_label">$obs.label.radioationRate ($trend(time_delta="24h").time_delta.hour.format("%.0f"))</td>
+                <td class="stats_data">$trend(time_delta="24h").radiation</td>
               </tr>
               #end if
             </tbody>
