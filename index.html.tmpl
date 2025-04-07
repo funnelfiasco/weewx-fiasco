@@ -158,6 +158,10 @@
                 <td class="stats_data">$trend(time_delta="24h").outTemp</td>
               </tr>
               <tr>
+                <td class="stats_label">$obs.label.outTemp $gettext("Change") ($trend(time_delta="1y").time_delta.day.format("%.0f"))</td>
+                <td class="stats_data">$trend(time_delta="1y").outTemp</td>
+              </tr>
+              <tr>
                 <td class="stats_label">$obs.label.dewpoint $gettext("Change") ($trend(time_delta="1h").time_delta.hour.format("%.0f"))</td>
                 <td class="stats_data">$trend(time_delta="1h").dewpoint</td>
               </tr>
