@@ -69,6 +69,39 @@
               </tr>
               <tr>
                 <td class="stats_label">
+                  $gettext("Cooling Degree Days")
+                </td>
+                <td class="stats_data">
+                  $month.cooldeg.sum
+                  #if $to_bool($Extras.metricizeUS) and $unit.unit_type.cooldeg == "degree_F_day" and $month.cooldeg.has_data
+                  ($month.cooldeg.sum.degree_C_day)
+                  #end if
+                </td>
+              </tr>
+              <tr>
+                <td class="stats_label">
+                  $gettext("Heating Degree Days")
+                </td>
+                <td class="stats_data">
+                  $month.heatdeg.sum
+                  #if $to_bool($Extras.metricizeUS) and $unit.unit_type.heatdeg == "degree_F_day" and $month.heatdeg.has_data
+                  ($month.heatdeg.sum.degree_C_day)
+                  #end if
+                </td>
+              </tr>
+              <tr>
+                <td class="stats_label">
+                  $gettext("Growing Degree Days")
+                </td>
+                <td class="stats_data">
+                  $month.growdeg.sum
+                  #if $to_bool($Extras.metricizeUS) and $unit.unit_type.growdeg == "degree_F_day" and $month.growdeg.has_data
+                  ($month.growdeg.sum.degree_C_day)
+                  #end if
+                </td>
+              </tr>
+              <tr>
+                <td class="stats_label">
                   $gettext("High Heat Index")
                 </td>
                 <td class="stats_data"> 
@@ -298,6 +331,39 @@
                   ($year.outTemp.min.degree_C)
                   #end if
                   $gettext("at") $year.outTemp.mintime
+                </td>
+              </tr>
+              <tr>
+                <td class="stats_label">
+                  $gettext("Cooling Degree Days")
+                </td>
+                <td class="stats_data">
+                  $year.cooldeg.sum
+                  #if $to_bool($Extras.metricizeUS) and $unit.unit_type.cooldeg == "degree_F_day" and $year.cooldeg.has_data
+                  ($year.cooldeg.sum.degree_C_day)
+                  #end if
+                </td>
+              </tr>
+              <tr>
+                <td class="stats_label">
+                  $gettext("Heating Degree Days")
+                </td>
+                <td class="stats_data">
+                  $year.heatdeg.sum
+                  #if $to_bool($Extras.metricizeUS) and $unit.unit_type.heatdeg == "degree_F_day" and $year.heatdeg.has_data
+                  ($year.heatdeg.sum.degree_C_day)
+                  #end if
+                </td>
+              </tr>
+              <tr>
+                <td class="stats_label">
+                  $gettext("Growing Degree Days")
+                </td>
+                <td class="stats_data">
+                  $year.growdeg.sum
+                  #if $to_bool($Extras.metricizeUS) and $unit.unit_type.growdeg == "degree_F_day" and $year.growdeg.has_data
+                  ($year.growdeg.sum.degree_C_day)
+                  #end if
                 </td>
               </tr>
               <tr>

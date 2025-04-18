@@ -221,6 +221,39 @@
               </tr>
               <tr>
                 <td class="stats_label">
+                  $gettext("Cooling Degree Days")
+                </td>
+                <td class="stats_data">
+                  $day.cooldeg.sum
+                  #if $to_bool($Extras.metricizeUS) and $unit.unit_type.cooldeg == "degree_F_day" and $day.cooldeg.has_data
+                  ($day.cooldeg.sum.degree_C_day)
+                  #end if
+                </td>
+              </tr>
+              <tr>
+                <td class="stats_label">
+                  $gettext("Heating Degree Days")
+                </td>
+                <td class="stats_data">
+                  $day.heatdeg.sum
+                  #if $to_bool($Extras.metricizeUS) and $unit.unit_type.heatdeg == "degree_F_day" and $day.heatdeg.has_data
+                  ($day.heatdeg.sum.degree_C_day)
+                  #end if
+                </td>
+              </tr>
+              <tr>
+                <td class="stats_label">
+                  $gettext("Growing Degree Days")
+                </td>
+                <td class="stats_data">
+                  $day.growdeg.sum
+                  #if $to_bool($Extras.metricizeUS) and $unit.unit_type.growdeg == "degree_F_day" and $day.growdeg.has_data
+                  ($day.growdeg.sum.degree_C_day)
+                  #end if
+                </td>
+              </tr>
+              <tr>
+                <td class="stats_label">
                   $gettext("High Heat Index")<br/>
                   $gettext("Low Wind Chill")
                 </td>
