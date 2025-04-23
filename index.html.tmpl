@@ -320,14 +320,20 @@
               </tr>
               <tr>
                 <td class="stats_label">$gettext("High Rain Rate")</td>
-                <td class="stats_data">$day.rainRate.max $gettext("at") $day.rainRate.maxtime</td>
+                <td class="stats_data">$day.rainRate.max
+                #if $day.rainRate.max.raw > 0
+                $gettext("at") $day.rainRate.maxtime</td>
+                #end if
               </tr>
               <tr>
                 <td class="stats_label">
                   $gettext("High Wind")
                 </td>
                 <td class="stats_data">
-                  $day.wind.max $gettext("from") $day.wind.gustdir $gettext("at") $day.wind.maxtime
+                  $day.wind.max
+                  #if $day.wind.max.raw > 0
+                  $gettext("from") $day.wind.gustdir $gettext("at") $day.wind.maxtime
+                  #end if
                 </td>
               </tr>
               <tr>
