@@ -175,7 +175,10 @@
                   $gettext("High Rain Rate")
                 </td>
                 <td class="stats_data">
-                  $year.rainRate.max $gettext("at") $year.rainRate.maxtime
+                  $year.rainRate.max
+                  #if $year.rainRate.max.raw > 0
+                  $gettext("at") $year.rainRate.maxtime
+                  #end if
                 </td>
               </tr>
               <tr>
@@ -183,7 +186,10 @@
                   $gettext("High Wind")
                 </td>
                 <td class="stats_data">
-                  $year.wind.max $gettext("from") $year.wind.gustdir $gettext("at") $year.wind.maxtime
+                  $year.wind.max
+                  #if $year.wind.max.raw > 0
+                  $gettext("from") $year.wind.gustdir $gettext("at") $year.wind.maxtime
+                  #end if
                 </td>
               </tr>
               <tr>
@@ -328,7 +334,10 @@
                   $gettext("High Rain Rate")
                 </td>
                 <td class="stats_data">
-                  $rainyear.rainRate.max $gettext("at") $rainyear.rainRate.maxtime
+                  $rainyear.rainRate.max
+                  #if $rainyear.rainRate.max.raw > 0
+                  $gettext("at") $rainyear.rainRate.maxtime
+                  #end if
                 </td>
               </tr>
             </tbody>
