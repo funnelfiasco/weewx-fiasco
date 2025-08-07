@@ -448,7 +448,7 @@
                 </td>
                 <td class="stats_data">
                   $year.rainRate.max
-                  #if $year.rainRate.max > 0
+                  #if $year.rainRate.max.raw > 0
                   $gettext("at") $year.rainRate.maxtime
                   #end if
                 </td>
