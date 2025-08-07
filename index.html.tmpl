@@ -67,6 +67,7 @@
                   #end if
                 </td>
               </tr>
+              #if $current.outTemp.raw > $current.windchill.raw
               <tr>
                 <td class="stats_label">$obs.label.windchill</td>
                 <td class="stats_data">$current.windchill
@@ -75,6 +76,8 @@
                   #end if
                 </td>
               </tr>
+              #end if
+              #if $current.outTemp.raw < $current.heatindex.raw
               <tr>
                 <td class="stats_label">$obs.label.heatindex</td>
                 <td class="stats_data">$current.heatindex
@@ -83,6 +86,7 @@
                   #end if
                 </td>
               </tr>
+              #end if
               <tr>
                 <td class="stats_label">$obs.label.dewpoint</td>
                 <td class="stats_data">$current.dewpoint
