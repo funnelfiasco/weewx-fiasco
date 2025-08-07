@@ -101,7 +101,13 @@
               </tr>
               <tr>
                 <td class="stats_label">$obs.label.wind</td>
-                <td class="stats_data">$current.windSpeed $gettext("from") $current.windDir ($current.windDir.ordinal_compass)</td>
+                <td class="stats_data">
+                  #if $current.windSpeed == 0
+                  $gettext("calm")
+                  #else
+                  $current.windSpeed $gettext("from") $current.windDir ($current.windDir.ordinal_compass)
+                  #end if
+                </td>
               </tr>
               <tr>
                 <td class="stats_label">$obs.label.rainRate</td>
